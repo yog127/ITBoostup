@@ -1,0 +1,31 @@
+﻿@model ITBoostUp.BusinessLayer.Model.State
+<form asp-controller="State" asp-action="Create">
+    <div class="form-group"
+        <label>State Name : </label>
+        <input asp-for="StateName" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>State Description :   </label>
+        <input asp-for="StateDescription" class="form-control" />
+    </div>
+    <br />
+    <div class="form-check mb-3">
+        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="IsActive" class="form-check-label">Is Active</label>
+    </div>
+    <div class="form-group">
+        <label>CreateBy</label>
+        <input asp-for="CreatedBy" class="form-control" />
+    </div>
+    <br />
+    <div>
+        @await Html.PartialAsync("CountryOption", ViewData["Countries"])
+    </div>
+    <br />
+   
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+</form>
+

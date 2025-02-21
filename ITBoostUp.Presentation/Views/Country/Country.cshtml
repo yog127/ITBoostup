@@ -1,0 +1,43 @@
+﻿@model List<ITBoostUp.BusinessLayer.Model.Country>;
+<div>
+    <div class="row">
+        <br /><br />
+        <div>
+            <a class="btn btn-primary mx-2" asp-controller="Country" asp-action="Country" asp-route-id="0">All</a>
+            <a class="btn btn-success mx-2" asp-controller="Country" asp-action="Country" asp-route-id="1">Active</a>
+            <a class="btn btn-danger mx-2" asp-controller="Country" asp-action="Country" asp-route-id="2">NotActive</a>
+        </div>
+        <br />
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <tr>
+                    <th>CountryId</th>
+                    <th>Country Name</th>
+                    <th>Country Address</th>
+                    <th>IsActive</th>
+                    <th>Action</th>
+                    <th></th>
+                </tr>
+                @foreach (var country in Model)
+                {
+                    <tr>
+                        <td>@country.CountryId</td>
+                        <td>@country.CountryName</td>
+                        <td>@country.CountryDescription</td>
+                        <td>@country.IsActive</td>
+                        <td>
+                            <a asp-controller="Country" asp-action="GetById" asp-route-id="@country.CountryId" class="btn btn-group">View</a>
+                            <a asp-controller="Country" asp-action="Update" asp-route-id="@country.CountryId" class="btn btn-group">Edit</a>
+                            <a asp-controller="Country" asp-action="Delete" asp-route-id="@country.CountryId" class="btn btn-group">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h1>Create Country</h1>      
+            @await Html.PartialAsync("Create", new ITBoostUp.BusinessLayer.Model.Country())
+        </div>
+    </div>
+</div>

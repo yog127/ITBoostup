@@ -1,0 +1,15 @@
+﻿@model ITBoostUp.BusinessLayer.Model.Company
+
+@{
+    ViewData["Title"] = "Upadte";
+}
+
+<h1>Upadte Company</h1>
+<form class="form-control" method="post">
+    <input type="number" class="form-control" name="id" value="@Model.Id" asp-for="Id" readonly />
+    <input type="text" class="form-control" name="name" value="@Model.Name" asp-for="Name"/>
+    <input type="text" class="form-control" name="address" value="@Model.Address" asp-for="Address" />
+    <input type="submit" class="btn btn-danger" value="Submit" />
+
+</form>
+

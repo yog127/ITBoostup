@@ -1,0 +1,25 @@
+﻿@model ITBoostUp.BusinessLayer.Model.Country
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            <h2 class="mb-0">Country Detail</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Country Id:</strong> @Model.CountryId</li>
+                <li class="list-group-item"><strong>Country Name:</strong> @Model.CountryName</li>
+                <li class="list-group-item"><strong>Country Address:</strong> @Model.CountryDescription</li>
+                <li class="list-group-item"><strong>Created On:</strong> @Model.CreatedOn</li>
+                <li class="list-group-item"><strong>Created By:</strong> @Model.CreatedBy</li>
+                <li class="list-group-item"><strong>Updated On:</strong> @Model.UpdatedOn</li>
+                <li class="list-group-item"><strong>Updated By:</strong> @Model.UpdatedBy</li>
+                <li class="list-group-item"><strong>Is Active:</strong> @(Model.IsActive ? "Yes" : "No")</li>
+            </ul>
+            <div class="mt-4">
+                <a asp-controller="Country" asp-action="Country" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

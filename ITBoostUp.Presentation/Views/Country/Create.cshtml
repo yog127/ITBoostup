@@ -1,0 +1,24 @@
+﻿@model ITBoostUp.BusinessLayer.Model.Country
+
+<form asp-controller="Country" asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Country Name</label>
+        <input asp-for="CountryName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Country Description</label>
+        <input asp-for="CountryDescription" class="form-control" />
+    </div>
+    <div class="form-check mb-3">
+        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="IsActive" class="form-check-label">Is Active</label>
+    </div>
+    <div class="form-group">
+        <label>CreateBy</label>
+        <input asp-for="CreatedBy" class="form-control" />
+    </div>
+
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -1,0 +1,26 @@
+﻿@model ITBoostUp.BusinessLayer.Model.State
+
+<div class="container mt-5">
+    <div>
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">State Detail</h2>
+        </div>
+        <div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>State Id:</strong> @Model.StateId</li>
+                <li class="list-group-item"><strong>State Name:</strong> @Model.StateName</li>
+                <li class="list-group-item"><strong>Country Id:</strong> @Model.CountryId</li>
+                <li class="list-group-item"><strong>State Address:</strong> @Model.StateDescription</li>
+                <li class="list-group-item"><strong>Created On:</strong> @Model.CreatedOn</li>
+                <li class="list-group-item"><strong>Created By:</strong> @Model.CreatedBy</li>
+                <li class="list-group-item"><strong>Updated On:</strong> @Model.UpdatedOn</li>
+                <li class="list-group-item"><strong>Updated By:</strong> @Model.UpdatedBy</li>
+                <li class="list-group-item"><strong>Is Active:</strong> @(Model.IsActive ? "Yes" : "No")</li>
+            </ul>
+            <div class="mt-4">
+                <a asp-controller="State" asp-action="State" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+

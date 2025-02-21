@@ -1,0 +1,15 @@
+﻿@{
+    var countries = ViewData["Countries"] as List<ITBoostUp.BusinessLayer.Model.Country>;
+}
+<div>
+    <select name="CountryId">
+        <option value="">Select Country</option>
+        @if(countries != null)
+        {
+            @foreach(var country in countries)
+            {
+                <option value="@country.CountryId">@country.CountryName</option>
+            }
+        }
+    </select>
+</div>

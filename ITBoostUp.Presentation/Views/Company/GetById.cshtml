@@ -1,0 +1,13 @@
+﻿@model ITBoostUp.BusinessLayer.Model.Company
+@{
+    ViewData["Title"] = "GetById";
+}
+
+<h1>Company Detail</h1>
+<ul>
+    <li>Company Id : @Model.Id</li>
+    <li>Company Name : @Model.Name</li>
+    <li>Company Address : @Model.Address</li>
+    <a asp-controller="Company" asp-action="Company">Back</a>
+</ul>
+

@@ -1,4 +1,5 @@
 
+using ITBoostUp.Presentation.Filters;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -12,7 +13,7 @@ namespace ITBoostUp.Presentation.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             return View();

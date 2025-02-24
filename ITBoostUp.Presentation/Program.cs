@@ -1,10 +1,18 @@
 using ITBoostUp.BusinessLayer.IRepository;
 using ITBoostUp.DataAccessLayer.Repository;
+using ITBoostUp.Presentation.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(option =>
+{
+    option.Filters.Add(new ExceptionFilter());
+    option.Filters.Add(new ActionFilter());
+});
+builder.Services.AddScoped<ActionFilter>();
+builder.Services.AddScoped<ExceptionFilter>();
+
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IStateRepository, StateRepository>();

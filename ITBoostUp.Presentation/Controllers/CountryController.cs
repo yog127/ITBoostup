@@ -1,5 +1,6 @@
 ﻿using ITBoostUp.BusinessLayer.IRepository;
 using ITBoostUp.BusinessLayer.Model;
+using ITBoostUp.Presentation.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITBoostUp.Presentation.Controllers
@@ -11,8 +12,12 @@ namespace ITBoostUp.Presentation.Controllers
         {
             _countryRepository = countryRepository;
         }
+        //[ServiceFilter(typeof(ActionFilter))]
         public IActionResult Country(int id = 0)
         {
+            int a = 1;
+            int b = 0;
+            int c = a / b;
             var countries = _countryRepository.List();
 
             if(id == 1){

@@ -16,4 +16,8 @@
     <ProjectReference Include="..\ITBoostUp.DataAccessLayer\ITBoostUp.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+
 </Project>

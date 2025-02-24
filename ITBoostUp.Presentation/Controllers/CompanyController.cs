@@ -1,9 +1,12 @@
 ﻿using ITBoostUp.BusinessLayer.IRepository;
 using ITBoostUp.BusinessLayer.Model;
+using ITBoostUp.Presentation.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITBoostUp.Presentation.Controllers
 {
+    //[ServiceFilter(typeof(ActionFilter))]
+    
     public class CompanyController : Controller
     {
         ICompanyRepository _companyRepository;
@@ -12,9 +15,14 @@ namespace ITBoostUp.Presentation.Controllers
         {
             _companyRepository = companyRepository;
         }
-
+        [ServiceFilter(typeof(ExceptionFilter))]
         public IActionResult Company()
         {
+            
+                int a = 1;
+                int b = 0;
+                int c = a / b;
+           
             var companies = _companyRepository.List();
             return View(companies);
         }

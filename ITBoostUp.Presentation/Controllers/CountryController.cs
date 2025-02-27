@@ -15,9 +15,9 @@ namespace ITBoostUp.Presentation.Controllers
         //[ServiceFilter(typeof(ActionFilter))]
         public IActionResult Country(int id = 0)
         {
-            int a = 1;
-            int b = 0;
-            int c = a / b;
+            //int a = 1;
+            //int b = 0;
+            //int c = a / b;
             var countries = _countryRepository.List();
 
             if(id == 1){

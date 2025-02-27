@@ -8,10 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(option =>
 {
     option.Filters.Add(new ExceptionFilter());
-    option.Filters.Add(new ActionFilter());
+    //option.Filters.Add(new ActionFilter());
+    //option.Filters.Add(new AuthorizationFilter());
+    //option.Filters.Add(new ResultFilter());
+
 });
 builder.Services.AddScoped<ActionFilter>();
 builder.Services.AddScoped<ExceptionFilter>();
+builder.Services.AddScoped<AuthorizationFilter>();
+builder.Services.AddScoped<ResultFilter>();
 
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();

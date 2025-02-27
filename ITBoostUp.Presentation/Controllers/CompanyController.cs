@@ -19,9 +19,9 @@ namespace ITBoostUp.Presentation.Controllers
         public IActionResult Company()
         {
             
-                int a = 1;
-                int b = 0;
-                int c = a / b;
+                //int a = 1;
+                //int b = 0;
+                //int c = a / b;
            
             var companies = _companyRepository.List();
             return View(companies);
